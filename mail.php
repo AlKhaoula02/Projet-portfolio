@@ -1,33 +1,38 @@
 
 <?php
 
-function conn(){
-try{
-$pdo = new PDO("mysql:host=localhost;dbname=khaoulaa_pf;charset=utf8", "khaoulaa", "i0TI0Y5B9SLmjg==");
-} catch(PDOEXPECTION $e) {
-   mail ('alkhaoula02@gmail.com');
-   echo 'connexion echouée'. $e->getMessage();
-}
-return $pdo;
-}
 
-// require "db.php";
-$conn= conn();
+$values = array("nom" => "", "email" => "","message" => "", "nomError" => "", "emailError" => "","messageError" => "", "isSuccess" => false);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
- if (isset($_POST['nom']) && isset($_POST['texte']) && isset($_POST['email']) && !empty($_POST['texte']) ) {
-   $to = "alkhaoula02@gmail.com";
-   $name = htmlspecialchars($_POST['nom']);
-   $email = htmlspecialchars($_POST['email']);
-   $message = htmlspecialchars($_POST['texte']);
-   $headers = "From:" . ($_POST['email']);
-   $conn->query("INSERT INTO mail(name,message,email,date) VALUES ('{$name}','{$message}','{$email}', now());");
+    $values["nom"] = $_POST["nom"];
+    $values["email"] = $_POST["email"];
+    $values["message"] = $_POST["message"];
+    $values["isSuccess"] = true;
+    if (empty($values["nom"])) {
+        $values["nomError"] = "Veuillez renseigner votre Nom";
+        $values["isSuccess"] = false;
+    }
+    if (empty($values["email"])) {
+        $values["emailError"] = "Veuillez renseigner votre Email";
+        $values["isSuccess"] = false;
+    } 
+    if (empty($values["message"])) {
+      $values["messageError"] = "Veuillez renseigner votre message";
+      $values["isSuccess"] = false;
+  } 
+    echo json_encode($values);
 
-   mail($to,$headers,$name,$email,$message);
+    
+      $name = $values["nom"];
+      $email = $values["email"];
+      $message = htmlspecialchars($values["message"]);
+      $to = "alkhaoula02@gmail.com";
+      mail($to, "New message from ".$name." <".$email.">",$message);
+  
+  }  
 
 
-   echo "Votre message a bien été envoyé: <br><br>";
-   echo $subject. "<br><br>";
-   echo $message. "<br><br>";
-   var_dump($_POST);
-}
 
+
+?>

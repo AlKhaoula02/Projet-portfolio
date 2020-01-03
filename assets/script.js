@@ -22,47 +22,100 @@ $(window).scroll(function() {
 
 
 
-let form = document.querySelector("#formulaire");
-let nom = document.getElementById('nom');
-let email = document.getElementById('email');
-let message = document.getElementById('message');
 
-form.addEventListener("submit", function(e){
-  e.preventDefault();
+$(function () {
+
+  // Ajout d'événement lors de l'envoi du formulaire
+  $('#contact-form').submit(function (e) {
+
+      // Enlever le comportement par défaut lors de l'envoi
+      e.preventDefault();
+
+      // Mettre à zéro les messages d'erreur
+      $('.error').empty();
+
+      // Récupérer le contenu du formulaire dans une variable
+      let postdata = $('#contact-form').serialize();
+
+      // AJAX
+      $.ajax({
+          // type de requête (get ou post)
+          type: 'POST',
+          // url vers lequel on envoie les données : fichier ciblé
+          url: 'mail.php',
+          // type de données à recevoir
+          data: postdata,
+          dataType: 'json',
+          // si succès -> fonction à exécuter
+          success: function(result) {
+              // Si nous n'avons pas de messages d'erreur
+              if (result.isSuccess) {
+                  $("#contact-form").append("<p class='msg'>Votre message a bien été envoyé.</p>");
+                  // Remettre les valeurs à zéro
+                  $("#contact-form")[0].reset();
+              }
+              else {
+                  // Afficher les messages d'erreur
+                  $("#nom + .error").html(result.nomError);
+                  $("#email + .error").html(result.emailError);
+                  $("#message + .error").html(result.messageError);
+              }
+
+          }
+
+      });
+
+
+  });
+
+
+})
+
+
+
+// let form = document.querySelector("#formulaire");
+// console.log(form)
+// let nom = document.getElementById('#nom');
+// console.log(nom)
+// let email = document.getElementById('#email');
+// let message = document.getElementById('#message');
+
+// form.addEventListener("submit", function(e){
+//   e.preventDefault();
   
   
-if(!nom.value.match(/^[a-zA-Z ]+$/))
-  {
-   alert("tapez un  nom valable");
-   nom.style.backgroundColor = "lightgray";
-   email.style.backgroundColor = "transparent";
-   message.style.backgroundColor = "transparent";
-  }
+// if(!nom.value.match(/^[a-zA-Z ]+$/))
+//   {
+//    alert("tapez un  nom valable");
+//    nom.style.backgroundColor = "lightgray";
+//    email.style.backgroundColor = "transparent";
+//    message.style.backgroundColor = "transparent";
+//   }
 
-  else if (!email.value.match( /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) 
-  {
-  alert("Tapez un email valable");
-  email.style.backgroundColor = "lightgray";
-  nom.style.backgroundColor = "transparent";
-  message.style.backgroundColor = "transparent";
-  }
-    else if (!message.value.match(/^[a-zA-Z ]+$/)) 
-    {
-    alert("Pensez à taper un message !");
-    message.style.backgroundColor = "lightgray";
-    nom.style.backgroundColor = "transparent";
-    email.style.backgroundColor = "transparent";
-    }
+//   else if (!email.value.match( /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) 
+//   {
+//   alert("Tapez un email valable");
+//   email.style.backgroundColor = "lightgray";
+//   nom.style.backgroundColor = "transparent";
+//   message.style.backgroundColor = "transparent";
+//   }
+//     else if (!message.value.match(/^[a-zA-Z ]+$/)) 
+//     {
+//     alert("Pensez à taper un message !");
+//     message.style.backgroundColor = "lightgray";
+//     nom.style.backgroundColor = "transparent";
+//     email.style.backgroundColor = "transparent";
+//     }
     
-      else if ((nom.value.match(/^[a-zA-Z ]+$/))&&(email.value.match( /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))&&(message.value.match(/^[a-zA-Z ]+$/)))
-        {
-          form.submit();
-          console.log("form submitted");
-        }
-  else
-     {
-       alert("Veuillez remplir correctement tous les champs");
-      };
-    }); 
+//       else if ((nom.value.match(/^[a-zA-Z ]+$/))&&(email.value.match( /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))&&(message.value.match(/^[a-zA-Z ]+$/)))
+//         {
+//           form.submit();
+//           console.log("form submitted");
+//         }
+//   else
+//      {
+//        alert("Veuillez remplir correctement tous les champs");
+//       };
+//     }); 
 
 

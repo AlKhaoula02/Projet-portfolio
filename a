@@ -19,7 +19,6 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	scroll-behavior: smooth;
 	
-	
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -29,7 +28,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	background-color:#fff9f0;
-	overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -46,22 +44,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
 /* fin du reset */
 
 
 body{
-	font-family:'Alice', sans-serif;
-	background: #F6F4E8;
-	/* overflow-x: hidden; */
-}
-.section
-{
-	
-	padding-bottom: 100px;
-}
+font-family:'Alice', sans-serif;
+background: #F6F4E8;
+overflow-x: hidden;
 
+}
 .divider
 {
 	
@@ -70,15 +61,7 @@ body{
 	margin-left: 35%;
 	margin-right: 35%;
 
-}
-.navbar-brand img {
-	/* width: 100px; */
-}
-.navbar-toggler-icon
-{
-	background-image: url("img/menu.png");
-	width: 50px;
-	height: 50px;
+	
 }
 
 .navbar-nav {
@@ -91,7 +74,7 @@ nav {
 	
 	color:white;
     padding: 10px 10px;
-	
+	height: 100px;
 	width: 100%;
     font-size: 14px;
 	transition: all .3s;
@@ -108,39 +91,55 @@ nav .nav-item {
 	font-weight: bold;
 	color:#584e4a ;
 }
-
 .navbar-brand {
 	color: #fff;
-	padding-left: 4%;
+	/* padding: 2%;
+	padding-left: 5%; */
     transition: all .3s;
 }
-
-.video {
+.navbar-brand img {
+	/* width: 100px; */
+}
+.navbar-toggler-icon
+{
+	background-image: url("img/menu.png");
+	width: 50px;
+	height: 50px;
+}
+/* .video {
     filter: opacity(70%);
     width: 100%;
     height: 500px;
     object-fit: cover;
-}
+} */
 .col{
 	position: absolute;
-	
+	top: 25%;
+	left: 25%;
+	transform: translate(-50%, -50%);
 	
 }
-
+/* 
 .section-about {
-	padding: 10%;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
 	font-size: 1.7rem;
 	color: #60137b;
-	line-height: 1.2;
-	
+	position:absolute;
 }
 .section-about h2{
- 
+ top: 40%;
+  left: 55px;
   height: 100%;
   width: 100%;
+  text-align:center;
+  line-height: 1.2;
   z-index:10;
   text-shadow:0px 0px 0px #60137b;
-  /* position: absolute; */
+  position: absolute;
+  font-size: 1.5rem;
+  color: #60137b;
   animation:animtexte;
   animation-timing-function:ease-in-out;
   animation-duration:2s,5s;
@@ -149,8 +148,15 @@ nav .nav-item {
 }
 .section-about h2 i{
 	
+	 
+	 height: 100%;
+	 width: 100%;
+	 text-align:center;
+	 line-height: 1.2;
+	 z-index:10;
 	 text-shadow:0px 0px 0px #60137b;
-	 font-size: 1.7rem;
+	 position: relative;
+	 font-size: 1.5rem;
 	 color: #60137b;
 	 animation:animtexte,glow;
 	 animation-timing-function:ease-in-out;
@@ -159,10 +165,10 @@ nav .nav-item {
 	 animation-iteration-count:1,infinite;
    }
 
-   @keyframes animtexte{
+@keyframes animtexte{
 	from{bottom:-50px;opacity:0;font-size:0.2rem;}
 	50%{bottom:-50px;opacity:0;font-size:0.2rem;}
-	to{bottom:0px;opacity:1;font-size:1.7rem;}
+	to{bottom:0px;opacity:1;font-size:1.5rem;}
   }
   @keyframes glow{
 	from{text-shadow:0px 0px 1px #FFC847;}
@@ -170,22 +176,21 @@ nav .nav-item {
 	to{text-shadow:0px 0px 1px #FFC847;}
   }
   
+
+
 #about-section{
 	height: auto;
 }
-.texte{
-	width: 100%;
-	text-align: center;
-	font-size: 1.5rem;
-	color: #57514f;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	justify-content: center;
-	
-}
+
 .title{
 	padding: 5%;
 }
+.section
+{
+	
+	padding: 20px 0 20px;
+} */
+
 .title-section {
 	text-align: center;
 	font-size: 1.9rem;
@@ -193,7 +198,6 @@ nav .nav-item {
 	padding:35px;
 	font-weight: bold;
 }
-
 .subtitle
 {
 	font-size: 1.5rem;
@@ -222,35 +226,32 @@ padding: 7px;
 #parcours-section{
 	background: url(./img/back.png) no-repeat center fixed; 
 	background-size: cover; 
-	/* justify-content: center; */
+	justify-content: center;
+	
+	
+
+
 }
+
+
 
 #CV-section{
 	background-color: #D09E98;
 	opacity: 0.7;
 	object-fit: cover;
 	height: 250px;
+	/* margin-top: 10px;
+	margin-bottom: 20px; */
 	position: relative;
-	padding-top: 3%;
-	
-	
 }
-#CV-section p{
-	text-align: center;
-	font-size: 1.5rem;
-	color: #57514f;
-
-}
-
-
 #cv
 {
-	
+	/* top: 40%;
+	left: 45%; */
 	padding: 10px 10px 10px 10px;
 	font-size: 1.2rem;
-	
-	color: #8D628B;
-	background-color: #F4BD61;
+	text-decoration: none;
+	/* position: absolute; */
 	border:solid 3px #F4BD61;
 	
 }
@@ -261,48 +262,59 @@ padding: 7px;
 	border:solid 3px #8D628B;
 	font-size: 1.4rem;
 	transition: .3s ease;
-	text-decoration: none;
-	border-radius: 5px;
 
 }
 
+.texte{
+	width: 100%;
+	text-align: center;
+	font-size: 1.5rem;
+	color: #57514f;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	justify-content: center;
+	
+}
+.texte p {
+	text-align: center;
+}
+
+
+
 
 .creation{
-	width: 250px;
-	height: 220px;
-	margin: auto;
-	
-	
+	width: 300px;
+	height: 250px;
+
 	
 	
 	
     
 }
 .crea{
-	
 	width: 250px;
-	height: 150px;
-	margin: auto;
-	position: relative;
+	height: 170px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	display: block;
-	
-	
+	position: relative;
+	align-items: center;
+	justify-content: center;
 
-	
-
+    
 }
 .crea .img-thumbnail
-{ 	
+{
+	
 	width:100% ;
 	height:100% ;
-	
 	transition: .5s ease;
 	opacity: 1;
 	justify-content: center;
+	
 }
-
-
-
 .lien{
 	width: 100%;
 	height: 100%;
@@ -324,7 +336,7 @@ padding: 7px;
 {
 		color: #FFC847;
 		font-size: 55px;
-		/* font-weight: bolder; */
+		font-weight: bolder;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -338,28 +350,19 @@ padding: 7px;
 	color: #FFC847;
 	opacity: 1;
 }
-
-
 .description
 {
-	
-	
-	width: 250px;
-	height: 50px;
-	margin: auto;
-	padding-top: 10px;
-	position: relative;
-	display: block;
-}
+	margin-top: 5%;
+	padding: 10%;
+	width: 100%;
+	height: auto;
+	position: relative;;
 
-#Projets-section .row{
-	
-	margin: auto;
-	padding-left: 20%;
-	padding-right: 20%;
-	
 }
-
+#Projets-section{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
 
 .formulaire
 {
@@ -475,13 +478,7 @@ fieldset{
 	color: black;
 }
 
-#all
-{
-	padding-left: 0%;
-	padding-right: 0%;
-	margin-left: 0%;
-	margin-right: 0%;
-}
+
 
 
 
@@ -489,21 +486,7 @@ fieldset{
 
 
 @media (max-width: 991px) { 
-	.navbar {
-		padding: 0px!important;
-	}  
 	.nav-item:hover{
 	background-color: #3B3A60;
 	}
-	nav .nav-item {
-		margin-left: 0px;
- 	}
-}
-
-@media (max-width: 1286px) { 
-	#Projets-section .row{
-	
-	
-		
-	}
-}
+ }

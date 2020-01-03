@@ -5,16 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Alice&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
   <link rel="stylesheet" type="text/css" href="./assets/style.css">
     
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
 
 
 </head>
@@ -25,8 +28,8 @@
     <nav class="navbar navbar-expand-lg ">
       <a class="navbar-brand" href="index.html"><img src="assets/img/Khaoula-Alaoui2.png" alt="Logo AK"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon burger"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
@@ -48,7 +51,7 @@
         <div class="section-about">
             <p>
             <h2 class="title">Hello<br> <br>Bienvenue sur mon portfolio !<br><br>
-            Je m’appelle <i>Khaoula Alaoui</i> <br> Je suis actuellement en formation <br> Désigner/Développeur Web à l'AcessCodeSchool</h2>
+            Je m’appelle <i>Khaoula Alaoui</i> <br> Je suis actuellement en formation <br> Designer/Développeur Web à l'AcessCodeSchool</h2>
             <br>
           </p>
         </div>
@@ -57,7 +60,7 @@
   </div>
 
     
-      <div class="container-fluid">
+      <div class="container">
 
 
           <section id="about-section" class="section ">
@@ -176,9 +179,9 @@
               </div>
 
 
-              <div class="miniCreas">
-                <div class="row offset-2">
-                  <div class="creation col-md-3 ">
+              
+                <div class="row center-block ">
+                  <div class="creation col-md-4 ">
                     <div class="crea">
                       <img class="img-thumbnail" src="assets/img/Creche.png" alt="Creche">
                       <div class="lien">
@@ -190,7 +193,7 @@
                           
                       </div>
                   </div>
-                  <div class="creation col-md-3 ">
+                  <div class="creation col-md-4  ">
                     <div class="crea">
                     <img class="img-thumbnail" src="assets/img/KMK.PNG" alt="Creche">
                     <div class="lien">
@@ -202,7 +205,7 @@
                         
                     </div>
                 </div>
-                <div class="creation col-md-3 ">
+                <div class="creation col-md-4 ">
                   <div class="crea">
                   <img class="img-thumbnail" src="assets/img/Multip.PNG" alt="Creche">
                   <div class="lien">
@@ -215,8 +218,7 @@
                   </div>
               </div>
           
-                <div
-                 class="creation col-md-3 ">
+                <div class="creation col-md-4 ">
                   <div class="crea">
                   <img class="img-thumbnail" src="assets/img/birdy.PNG" alt="Creche">
                   <div class="lien"><a class="voir" href="https://khaoulaa.promo-31.codeur.online/ProjetBirdy/">+</a></div>
@@ -227,7 +229,7 @@
                       
                   </div>
               </div>
-              <div class="creation col-md-3" >
+              <div class="creation col-md-4 " >
                 <div class="crea">
                 <img class="img-thumbnail" src="assets/img/greetingCard.PNG" alt="Creche">
                 <div class="lien">
@@ -238,7 +240,7 @@
                     <p>Design et Développement</p>
                 </div>
               </div>
-              <div class="creation col-md-3" >
+              <div class="creation col-md-4" >
                 <div class="crea">
                 <img class="img-thumbnail" src="assets/img/blueasy.PNG" alt="Creche">
                 <div class="lien"><a class="voir" href="https://khaoulaa.promo-31.codeur.online/maquette/">+</a></div>
@@ -249,8 +251,7 @@
                     
                 </div class="text-center">
               </div>
-            </div
-            >
+            
                 
             </div>
 
@@ -280,19 +281,22 @@
                 <div class="divider"></div>
               </div>
           <div class="formulaire ">
-            <form action="mail.php" method="POST" id="formulaire">
+            <form action="" role ="form" method="POST" id="contact-form">
                 <fieldset>
                   <label class="col-form-control" for="nom"> Votre nom: </label>
-                  <input class="form-control" type="text" id="nom" placeholder="Nom">
+                  <input class="form-control" type="text" id="nom" name="nom" placeholder="Nom">
+                  <p class="error"></p>
                 </fieldset>
                 <fieldset>
                   <label class="col-form-control" for="email">Votre email: </label>
-                  <input class="form-control" id="email" placeholder="Email">
+                  <input class="form-control" id="email" name="email" placeholder="Email">
+                  <p class="error"></p>
                 </fieldset>
                 <fieldset>
                   <label class="col-form-label " for="message">Votre message</label>
-                  <textarea class="form-control" id="message" cols="30" rows="10"
+                  <textarea class="form-control" id="message" name="message" cols="30" rows="10"
                     placeholder="Message"></textarea>
+                    <p class="error"></p>
                 </fieldset>
 
                 <input class="btn-valider" type="submit" value="Envoyer !" id="envoyer">
@@ -325,11 +329,7 @@
               <i class="fab fa-twitter"> </i>
             </a>
           </li>
-          <li class="list-inline-item">
-            <a class="btnsoc btn-floating btn-lg btn-gplus" type="button" role="button">
-              <i class="fab fa-google-plus-g"> </i>
-            </a>
-          </li>
+          
           <li class="list-inline-item">
             <a class="btnsoc btn-floating btn-lg btn-li" type="button" role="button" href="https://www.linkedin.com/in/khaoula-alaoui-39238a194/">
               <i class="fab fa-linkedin-in"> </i>
@@ -358,9 +358,6 @@
       
      
     
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
     <script src="assets/script.js"></script>
 
 </body>
