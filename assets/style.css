@@ -274,11 +274,6 @@ padding: 7px;
 	width: 250px;
 	height: 220px;
 	margin: auto;
-	
-	
-	
-	
-	
     
 }
 .crea{
@@ -350,13 +345,16 @@ padding: 7px;
 
 #Projets-section .row{
 	
-	margin: auto;
+	/* margin: auto;
 	padding-left: 20%;
-	padding-right: 20%;
+	padding-right: 20%; */
 	
 }
 
-
+.justifycenter
+{
+	justify-content: center;
+}
 .formulaire
 {
 	max-width: 700px;
