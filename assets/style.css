@@ -56,7 +56,7 @@ table {
 body{
 	font-family:'Alice', sans-serif;
 	background: #F6F4E8;
-	/* overflow-x: hidden; */
+	overflow-x: hidden;
 }
 .section
 {
@@ -83,6 +83,10 @@ body{
 	height: 50px;
 	text-decoration: none;
 	border-radius: 0px;
+}
+.navbar-collapse {
+    
+	transition: all 0.5s ease!important;
 }
 
 .navbar-nav {
@@ -165,7 +169,7 @@ nav .nav-item {
 
    @keyframes animtexte{
 	from{bottom:-50px;opacity:0;font-size:0.2rem;}
-	50%{bottom:-50px;opacity:0;font-size:0.2rem;}
+	50%{bottom:-50px;opacity:0.5;font-size:0.2rem;}
 	to{bottom:0px;opacity:1;font-size:1.7rem;}
   }
   @keyframes glow{
@@ -187,8 +191,16 @@ nav .nav-item {
 	justify-content: center;
 	
 }
+.title1{
+	text-align: center;
+	margin-top: 1%;
+
+	margin-bottom: 0%;
+	
+}
 .title{
-	padding: 5%;
+	text-align: center;
+	
 }
 .title-section {
 	text-align: center;
@@ -252,7 +264,7 @@ padding: 7px;
 	
 	padding: 10px 10px 10px 10px;
 	font-size: 1.2rem;
-	
+	transition: .4s ease-in-out;
 	color: #8D628B;
 	background-color: #F4BD61;
 	border:solid 3px #F4BD61;
@@ -264,10 +276,9 @@ padding: 7px;
 	background: #8D628B;
 	border:solid 3px #8D628B;
 	font-size: 1.4rem;
-	transition: .3s ease;
+	transition: .4s ease;
 	text-decoration: none;
 	border-radius: 5px;
-
 }
 
 
@@ -278,7 +289,6 @@ padding: 7px;
     
 }
 .crea{
-	
 	width: 250px;
 	height: 150px;
 	margin: auto;
@@ -290,12 +300,31 @@ padding: 7px;
 { 	
 	width:100% ;
 	height:100% ;
-	
 	transition: .5s ease;
 	opacity: 1;
 	justify-content: center;
 }
 
+.typewriter {
+	  
+	  overflow: hidden;
+	  border-right: .10em solid;
+	  white-space: nowrap;
+	  margin: 0 auto;
+	  letter-spacing: .1em;
+	  animation: typing 4.5s steps(40, end) infinite, blink-caret 3.75s step-end infinite;
+  
+  }
+  @keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: #57514f}
+  }
 
 
 .lien{
@@ -425,7 +454,7 @@ textarea
 	background-color: #694F87;
 	transition: all .5s;
 	color:#F4BD61;
-	border: 4px solid #F4BD61!important;
+	border: 4px solid #694F87!important;
 }
 
 
@@ -433,12 +462,12 @@ textarea
 /* Return on top */
 #returnOnTop {
     
-    bottom: 1.5%;
+    bottom: 3%;
     cursor: pointer;
     display: none;
     height: 45px;
     position: fixed;
-    right: 1.5%;
+    right: 3%;
 	width: 45px;
 	z-index: 100;
     line-height: 34px;
@@ -487,6 +516,9 @@ textarea
 
 
 @media (max-width: 991px) { 
+	.body{
+		overflow-x: hidden;
+	}
 	.navbar {
 		padding: 0px!important;
 	}  
@@ -501,9 +533,25 @@ textarea
 		padding-left: 7%;
 		padding-right: 7%;
 	}
+	#returnOnTop {
+    
+		bottom: 7%;
+		right: 4%;
+		
+		
+	}
+	.section-about h2{
+ 
+	
+		width: 86%;
+		
+	  }
 }
 
 @media (max-width: 1286px) { 
+	.body{
+		overflow-x: hidden
+	}
 	#Projets-section .row{
 	
 	

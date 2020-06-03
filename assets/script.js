@@ -8,7 +8,8 @@ $(document).ready( function () {
   // On click, scrollTop
   $('#returnOnTop').click(function() {
     console.log("test");
-      window.scrollTo(0,0)
+      
+      $("html").animate({ scrollTop: "0" }, "800");
   });
  
 
